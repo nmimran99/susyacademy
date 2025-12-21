@@ -142,6 +142,9 @@ function Hero() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold text-dark-purple leading-tight">
+              <span className="block text-2xl md:text-3xl text-primary-purple mb-4 font-semibold">
+                סוזי אקדמי - בית הספר המוביל בארץ להכנה ללימודים באיטליה!
+              </span>
               הדרך הבטוחה שלך <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-purple to-accent-purple">
                 ללימודים באיטליה!
