@@ -13,7 +13,9 @@ import {
   FaMicroscope, 
   FaPalette, 
   FaBookOpen,
-  FaCheckCircle
+  FaCheckCircle,
+  FaPhone,
+  FaEnvelope
 } from "react-icons/fa";
 import { RiMoneyEuroCircleLine, RiUserCommunityLine } from "react-icons/ri";
 import { FaRegMoneyBill1, FaUserDoctor } from "react-icons/fa6";
@@ -529,6 +531,18 @@ function ContactBar() {
     <div className="bg-dark-purple text-white py-12">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-8">רוצים לשמוע עוד? אנחנו זמינים לכל שאלה</h2>
+        
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mb-8 text-lg">
+          <a href="tel:0587542274" className="flex items-center gap-3 hover:text-accent-purple transition-colors bg-white/10 px-6 py-3 rounded-full">
+            <FaPhone />
+            <span>058-754-2274</span>
+          </a>
+          <a href="mailto:susyacademyitaly@gmail.com" className="flex items-center gap-3 hover:text-accent-purple transition-colors bg-white/10 px-6 py-3 rounded-full">
+            <FaEnvelope />
+            <span>susyacademyitaly@gmail.com</span>
+          </a>
+        </div>
+
         <div className="flex justify-center gap-6 mb-8">
           {socialLinks.map((link, idx) => (
             <a 
@@ -576,19 +590,34 @@ export default function Home() {
             </nav>
           </div>
 
-          {/* Left: Socials */}
-          <div className="flex items-center gap-3">
-             {socialLinks.map((link, idx) => (
-              <a 
-                key={idx} 
-                href={link.href} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={`${link.color} text-white w-9 h-9 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-sm`}
-              >
-                <link.icon className="text-base" />
+          {/* Left: Contact & Socials */}
+          <div className="flex items-center gap-4">
+            {/* Contact Info (Desktop) */}
+            <div className="hidden lg:flex flex-col items-end text-sm text-gray-600 gap-1 ml-4 border-l pl-4 border-gray-200">
+              <a href="tel:0587542274" className="flex items-center gap-2 hover:text-primary-purple transition-colors">
+                <span>058-754-2274</span>
+                <FaPhone className="text-primary-purple text-xs" />
               </a>
-            ))}
+              <a href="mailto:susyacademyitaly@gmail.com" className="flex items-center gap-2 hover:text-primary-purple transition-colors">
+                <span>susyacademyitaly@gmail.com</span>
+                <FaEnvelope className="text-primary-purple text-xs" />
+              </a>
+            </div>
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-3">
+               {socialLinks.map((link, idx) => (
+                <a 
+                  key={idx} 
+                  href={link.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={`${link.color} text-white w-9 h-9 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-sm`}
+                >
+                  <link.icon className="text-base" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </header>
