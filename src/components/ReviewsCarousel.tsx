@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Button } from "@heroui/button";
 import {  FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
@@ -11,6 +11,7 @@ type Review = {
   name: string;
   content: string;
 };
+
 
 const reviewsData: Review[] = [
   { id: "4", name: "אילאי אדמוני", content: "לאחר הרבה בדיקה והתלבטות, בחרתי ללכת למכינה של סוזי- שהתברר כהחלטה הכי טובה שיכולתי לקחת. מורה מקצועית , נעימה , סבלנית , רמת ידע עמוקה של החומר והשפה , מצליחה לפשט את החומר ולהעביר אותו בצורה חווייתית וכיפית, עוזרת בכל הנושאים הבירוקרטים ותמיד זמינה." },
@@ -53,7 +54,7 @@ export default function ReviewsCarousel() {
     setIndex((prev) => (prev - 1 + reviewsData.length) % reviewsData.length);
   };
 
-  const variants = {
+  const variants: Variants = {
     enter: (dir: number) => ({
       x: dir > 0 ? 300 : -300,
       opacity: 0,

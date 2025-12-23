@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "dependencies": {
     "@heroui/button": "^2.2.24",
     "@heroui/system": "^2.4.20",
@@ -21,7 +24,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
