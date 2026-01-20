@@ -71,7 +71,7 @@ const tracks = [
     label: "רפואה ומקצועות המדע",
     icon: FaMicroscope,
     title: "רפואה, רפואת שיניים, וטרינריה",
-    desc: "המסלול המבוקש ביותר. הקבלה מותנית לרוב במבחן כניסה ארצי (IMAT באנגלית או מבחן מקביל באיטלקית).",
+    desc: "המסלול המבוקש ביותר. הקבלה מותנית לרוב במבחן כניסה ארצי.",
     details: [
       "לימוד שפה איטלקית לרמת B2 (חובה ברוב האוניברסיטאות גם למסלולי אנגלית כחלק מהחיים והלימודים הקליניים).",
       "קורס מדעים מקיף (כימיה, ביולוגיה, פיזיקה).",
@@ -116,10 +116,11 @@ function BackgroundShape({ src, className }: { src: string; className: string })
 
 function Hero() {
   return (
-    <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-purple-50 via-white to-purple-50">
+    <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Shapes */}
       <BackgroundShape src="/images/shape1.svg" className="top-10 right-0 w-64 h-64 rotate-45" />
       <BackgroundShape src="/images/shape2.svg" className="bottom-20 left-10 w-80 h-80 -rotate-12" />
+      <BackgroundShape src="/images/logo_purple_only.svg" className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-[0.03] scale-125" />
 
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-purple-200/30 rounded-full blur-3xl" />
@@ -134,7 +135,7 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-block p-4 rounded-2xl bg-purple-50 border border-purple-100 shadow-sm mb-6 max-w-xl">
+            <div className="inline-block p-4 rounded-2xl bg-purple-50/50 border border-purple-400 shadow-xl mb-6 max-w-xl">
               <p className="text-primary-purple font-bold text-lg mb-1">
                 📣 ההרשמה למועד פברואר 2026 החלה!
               </p>
@@ -173,7 +174,7 @@ function Hero() {
               <Button 
                 size="lg"
                 radius="full"
-                className="bg-primary-purple text-white font-bold text-lg shadow-lg hover:bg-dark-purple hover:scale-105 transition-transform h-14 px-8 w-full flex items-center justify-center gap-3"
+                className="bg-primary-purple text-white font-bold text-lg shadow-lg hover:bg-primary-purple hover:scale-105 transition-transform h-14 px-8 w-full flex items-center justify-center gap-3"
               >
                 <span>דברו איתנו בוואטסאפ</span>
                 <FaWhatsapp className="text-2xl" />
@@ -221,6 +222,7 @@ function Hero() {
                 <p className="text-xs text-gray-500">בהכנה ללימודים באיטליה</p>
               </div>
             </div>
+            
           </div>
         </motion.div>
       </div>
@@ -230,50 +232,42 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="py-20 bg-white relative overflow-hidden">
+    <section id="about" className="py-20 relative overflow-hidden">
       {/* Decorative dots pattern */}
       <div className="absolute top-10 left-10 opacity-20 hidden lg:block">
          <div className="w-24 h-24 bg-[radial-gradient(#6a1b9a_2px,transparent_2px)] [background-size:16px_16px]"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-           <div className="lg:w-1/2 relative">
-             <div className="relative">
+        <div className="flex flex-col lg:flex-row items-center gap-4">
+           <div className="lg:w-1/2 relative flex justify-center">
+             <div className="relative max-w-md">
                 <Image 
-                  src="/images/passport.jpg" 
-                  alt="Studying in Italy" 
-                  width={600} 
-                  height={400} 
-                  className="rounded-3xl shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500"
+                  src="/images/susy_with_kids.png" 
+                  alt="Susy with kids" 
+                  width={500} 
+                  height={350} 
+                  className="rounded-3xl shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500 object-cover"
                 />
-                <div className="absolute -bottom-6 -right-6 hidden md:block z-20">
-                  <div className="bg-white p-1.5 rounded-full shadow-2xl border-2 border-purple-100">
-                    <Image 
-                      src="/images/italyflag.jpg" 
-                      alt="Italy Flag" 
-                      width={100} 
-                      height={100} 
-                      className="rounded-full w-24 h-24 object-cover"
-                    />
-                  </div>
-                </div>
              </div>
            </div>
            
            <div className="lg:w-1/2 space-y-6 text-right">
              <h2 className="text-4xl font-bold text-dark-purple">אז מי זאת סוזי?</h2>
              <div className="w-20 h-1.5 bg-accent-purple rounded-full" />
-             <p className="text-lg text-gray-600 leading-relaxed">
+             <p className="text-lg text-gray-600 leading-relaxed font-medium">
                סוזי עמרם, מורה ומלווה מסורה, היא הרבה יותר מיועצת אקדמית. ילידת איטליה שעלתה לישראל בשנת 1996 והתיישבה בחיפה, היא אמא לשישה ילדים.
              </p>
-             <p className="text-lg text-gray-600 leading-relaxed">
+             <p className="text-lg text-gray-700 font-medium leading-relaxed">
                סוזי, בוגרת תואר ראשון בביולוגיה ובעלת תעודת הוראה מאוניברסיטת בר-אילן, משלבת את אהבתה להוראה עם קשריה העמוקים למערכת ההשכלה הגבוהה באיטליה. בזכות ההיכרות האישית והמקיפה שלה עם השפה, התרבות והבירוקרטיה האיטלקית, היא מכינה בהצלחה סטודנטים ללימודים שם מאז שנת 2007.
+             </p>
+             <p className="text-lg text-gray-700 font-medium leading-relaxed">
+               סוזי מלווה את הסטודנטים בדרכם ללימודים באיטליה במסירות ובאכפתיות יוצאת דופן, תוך מתן יחס אישי לכל סטודנט וסטודנטית ומענה מדויק לצרכים הייחודיים שלהם. היא רואה בכל אתגר של הסטודנטים משימה אישית ומטפלת בכל פנייה במלוא הרצינות והחום. הסטודנטים מספרים שסוזי היא עבורם "אמא שנייה" – כזו שממשיכה ללוות ולדאוג להם גם זמן רב אחרי שסיימו את לימודיה אצלה.
              </p>
              <div className="pt-4">
                 <a href="https://wa.me/972587542274" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-dark-purple text-white font-semibold shadow-lg">
-                    קרא עוד על המכינה
+                  <Button className="bg-primary-purple text-white font-semibold shadow-lg px-4 py-2 rounded-full hover:scale-105">
+                    דברו עם סוזי עכשיו
                   </Button>
                 </a>
              </div>
@@ -308,7 +302,7 @@ function ExperienceBanner() {
 
 function WhyItaly() {
   return (
-    <section className="py-20 bg-custom-light-purple/30 relative overflow-hidden">
+    <section id="why-italy" className="py-20 relative overflow-hidden">
       <BackgroundShape src="/images/shape3.svg" className="top-0 left-0 w-96 h-96 opacity-5 rotate-180" />
 
       <div className="container mx-auto px-4 text-center relative z-10">
@@ -322,7 +316,7 @@ function WhyItaly() {
             <motion.div 
               key={idx}
               whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-2xl shadow-md border border-purple-50 hover:shadow-xl transition-all"
+              className="bg-white/80 backdrop-blur-md p-8 rounded-2xl shadow-md border border-purple-50 hover:shadow-xl transition-all"
             >
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary-purple text-3xl">
                 <reason.icon />
@@ -343,7 +337,7 @@ function Tracks() {
   const activeTrack = tracks.find(t => t.id === activeTab) || tracks[0];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section id="tracks" className="py-20 relative overflow-hidden">
        {/* Decorative Shapes */}
        <BackgroundShape src="/images/shape4.svg" className="top-10 right-0 w-80 h-80 opacity-10 rotate-12" />
        <BackgroundShape src="/images/shape3.svg" className="bottom-10 left-10 w-64 h-64 opacity-10 -rotate-45" />
@@ -377,7 +371,7 @@ function Tracks() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3 }}
-                className="bg-purple-50 rounded-3xl p-8 md:p-12 border border-purple-100 h-full relative overflow-hidden"
+                className="bg-white/80 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-purple-100 h-full relative overflow-hidden shadow-sm"
              >
                {/* Optional subtle background image for card */}
                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary-purple to-accent-purple" />
@@ -399,7 +393,7 @@ function Tracks() {
 
                <div className="mt-10">
                  <a href="https://wa.me/972587542274" target="_blank" rel="noopener noreferrer">
-                   <Button className="bg-accent-purple text-white font-bold w-full md:w-auto shadow-lg">
+                   <Button className="bg-primary-purple text-white font-semibold shadow-lg px-4 py-2 rounded-full hover:scale-105">
                      לייעוץ אישי על המסלול
                    </Button>
                  </a>
@@ -414,7 +408,7 @@ function Tracks() {
 
 function CourseStructure() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-purple-50">
+    <section id="how-we-learn" className="py-20 bg-transparent">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-dark-purple mb-4">איך לומדים אצל סוזי?</h2>
@@ -425,7 +419,7 @@ function CourseStructure() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Italian Course Card */}
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-purple-100 hover:shadow-2xl transition-shadow">
+          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-xl overflow-hidden border border-purple-100 hover:shadow-2xl transition-shadow">
             <div className="bg-primary-purple p-6 text-white text-center">
               <h3 className="text-2xl font-bold">שלב א&apos;: קורס איטלקית</h3>
               <p className="opacity-90 mt-1">בונים בסיס חזק לשפה</p>
@@ -461,10 +455,10 @@ function CourseStructure() {
           </div>
 
           {/* Science Course Card */}
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-purple-100 hover:shadow-2xl transition-shadow">
+          <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-xl overflow-hidden border border-purple-100 hover:shadow-2xl transition-shadow">
             <div className="bg-accent-purple p-6 text-white text-center">
               <h3 className="text-2xl font-bold">שלב ב&apos;: קורס מדעים</h3>
-              <p className="opacity-90 mt-1">ממוקד למבחני הכניסה (IMAT/TOLC)</p>
+              <p className="opacity-90 mt-1">ממוקד למבחני הכניסה</p>
             </div>
             <div className="p-8 space-y-6">
               <div className="flex justify-between items-center border-b border-gray-100 pb-4">
@@ -528,7 +522,7 @@ function CourseStructure() {
 
 function ContactBar() {
   return (
-    <div className="bg-dark-purple text-white py-12">
+    <div id="contact" className="text-white py-12 relative bg-dark-purple/90 backdrop-blur-md">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-8">רוצים לשמוע עוד? אנחנו זמינים לכל שאלה</h2>
         
@@ -562,11 +556,78 @@ function ContactBar() {
   );
 }
 
+function Bureaucracy() {
+  const steps = [
+    "רישום לאוניברסיטאות",
+    "הרשמה למבחני כניסה",
+    "התנהלות מול השגרירות",
+    "מעקב אחר התקדמות הויזה",
+    "מילוי מסמכים נדרשים לויזה ושהייה קבועה באיטליה"
+  ];
+
+  return (
+    <section id="bureaucracy" className="py-20 relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
+          <div className="lg:w-1/2 relative flex justify-center">
+            <div className="relative max-w-md">
+              <Image 
+                src="/images/passport.jpg" 
+                alt="Italy Bureaucracy" 
+                width={500} 
+                height={350} 
+                className="rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500 object-cover border-8 border-white/80"
+              />
+            </div>
+          </div>
+          
+          <div className="lg:w-1/2 space-y-6 text-right">
+            <h2 className="text-4xl font-bold text-dark-purple">ליווי בירוקרטי מקצה לקצה</h2>
+            <div className="w-20 h-1.5 bg-accent-purple rounded-full" />
+            <p className="text-lg text-gray-700 font-medium leading-relaxed">
+              התהליך הבירוקרטי ללימודים באיטליה הוא ארוך ומורכב, הוא משתנה בכל שנה ודורש ליווי של מישהי שלא רק מכירה את התהליך, אלא גם נשארת מעודכנת בכל שינוי של ממשלת איטליה.
+            </p>
+            <p className="text-lg text-gray-700 font-medium leading-relaxed">
+              כדוברת איטלקית שפת אם ובעלת היכרות עמוקה עם הבירוקרטיה האיטלקית, סוזי נשארת מעודכנת בכל רגע נתון בדרישות המשתנות – כדי שאתם לא תצטרכו לדאוג.
+            </p>
+            <p className="text-lg text-primary-purple font-bold leading-relaxed italic">
+              בלי טעויות, בלי תקלות ובלי כאבי ראש. תנו לסוזי לטפל בכל הבירוקרטיה עבורכם, כדי שתוכלו להתרכז במה שבאמת חשוב – הלימודים שלכם.
+            </p>
+
+            <div className="space-y-4 pt-4">
+              <h4 className="font-bold text-xl text-dark-purple">בתהליך זה, סוזי איתכם בכל שלב:</h4>
+              <ul className="space-y-3">
+                {steps.map((step, i) => (
+                  <li key={i} className="flex items-center gap-3 justify-start">
+                    <FaCheckCircle className="text-green-500 shrink-0" />
+                    <span className="text-gray-700 font-medium">{step}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // --- Main Page ---
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white" dir="rtl">
+    <main className="min-h-screen relative" dir="rtl">
+      {/* Fixed Background */}
+      <div className="fixed inset-0 z-[-1]">
+        <Image 
+          src="/images/gradient.png" 
+          alt="" 
+          fill 
+          className="object-cover opacity-40"
+          priority
+        />
+      </div>
+
       {/* Navigation / Header */}
       <header className="sticky top-0 left-0 w-full z-50 py-3 px-6 bg-white/80 backdrop-blur-md shadow-sm border-b border-purple-100">
         <div className="container mx-auto flex justify-between items-center">
@@ -586,6 +647,42 @@ export default function Home() {
                 className="text-dark-purple font-bold hover:text-primary-purple transition-colors cursor-pointer"
               >
                 מי אנחנו?
+              </button>
+              <button 
+                onClick={() => document.getElementById('why-italy')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-dark-purple font-bold hover:text-primary-purple transition-colors cursor-pointer"
+              >
+                למה איטליה?
+              </button>
+              <button 
+                onClick={() => document.getElementById('tracks')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-dark-purple font-bold hover:text-primary-purple transition-colors cursor-pointer"
+              >
+                מסלולי לימוד
+              </button>
+              <button 
+                onClick={() => document.getElementById('how-we-learn')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-dark-purple font-bold hover:text-primary-purple transition-colors cursor-pointer"
+              >
+                איך לומדים?
+              </button>
+              <button 
+                onClick={() => document.getElementById('bureaucracy')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-dark-purple font-bold hover:text-primary-purple transition-colors cursor-pointer"
+              >
+                ליווי בירוקרטי
+              </button>
+              <button 
+                onClick={() => document.getElementById('reviews')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-dark-purple font-bold hover:text-primary-purple transition-colors cursor-pointer"
+              >
+                המלצות
+              </button>
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="text-dark-purple font-bold hover:text-primary-purple transition-colors cursor-pointer"
+              >
+                צור קשר
               </button>
             </nav>
           </div>
@@ -628,7 +725,10 @@ export default function Home() {
       <WhyItaly />
       <Tracks />
       <CourseStructure />
-      <ReviewsCarousel />
+      <Bureaucracy />
+      <div id="reviews">
+        <ReviewsCarousel />
+      </div>
       <ContactBar />
     </main>
   );

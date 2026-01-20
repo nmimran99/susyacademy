@@ -80,8 +80,8 @@ export default function ReviewsCarousel() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center py-16 bg-gradient-to-br from-white to-purple-50 overflow-hidden">
-      <div className="text-3xl font-bold text-dark-purple mb-12">
+    <div className="w-full flex flex-col items-center py-16 bg-transparent overflow-hidden">
+      <div className="text-3xl font-bold text-dark-purple mb-6">
         מה הסטודנטים מספרים?
       </div>
       
